@@ -1,4 +1,7 @@
 #!/usr/bin/python3
-for digit1 in range(10):
-    for digit2 in range(digit1 + 1, 10):
-        print("{:d}{:d}".format(digit1, digit2), end=", " if digit1 < 8 or digit2 < 9 else "\n")
+
+for num in range(100):
+    if num < 10:
+        print("0{:d}".format(num), end=", " if num != 99 else "\n")
+    else:
+        print("{:d}".format(num), end=", " if num != 99 else "\n")
