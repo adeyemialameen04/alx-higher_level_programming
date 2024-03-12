@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-def uppercase(str):
-    length = len(str)
+def uppercase(s):
+    length = len(s)
 
-    for c in str:
-        if 'a' <= c <= 'z':
-            upper_ch = chr(ord(c) - ord('a') + ord('A'))
-            print("{}".format(upper_ch), end='' if i < length - 1 else '\n')
+    for i, char in enumerate(s):
+        if 'a' <= char <= 'z':
+            uppercase_char = chr(ord(char) - ord('a') + ord('A'))
+            print("{}".format(uppercase_char), end='' if i < length - 1 else '\n')
         else:
-            print("{}".format(c), end='' if i < length - 1 else '\n')
+            print("{}".format(char), end='' if i < length - 1 else '\n')
