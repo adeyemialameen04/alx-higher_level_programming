@@ -6,11 +6,11 @@ if __name__ == "__main__":
     total_no_of_args = len(sys.argv)
 
     if total_no_of_args == 1:
-        print("0 arguments.")
+        print("{} arguments.".format(0))
     elif total_no_of_args == 2:
-        print("1 argument:")
+        print("{} argument:".format(1))
     else:
-        print(f"{total_no_of_args - 1} arguments:")
+        print("{} arguments:".format(total_no_of_args - 1))
 
     for i in range(1, total_no_of_args):
-        print(f"{i}: {sys.argv[i]}")
+        print("{}: {}".format(i, sys.argv[i]))
