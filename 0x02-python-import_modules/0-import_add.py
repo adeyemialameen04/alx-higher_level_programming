@@ -1,1 +1,1 @@
-__import__("2-args")
+__import__("3-infinite_add")
