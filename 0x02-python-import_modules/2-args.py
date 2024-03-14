@@ -3,14 +3,15 @@
 if __name__ == "__main__":
     import sys
 
-    total_no_of_args = len(sys.argv)
-
-    if total_no_of_args == 1:
-        print("{:d} arguments.".format(0))
-    elif total_no_of_args == 2:
-        print("{:d} argument:".format(1))
+    if len(sys.argv) == 1:
+        print("0 arguments.")
+    elif len(sys.argv) == 2:
+        print("1 argument:")
     else:
-        print("{:d} arguments:".format(total_no_of_args - 1))
+        print(f"{len(sys.argv) - 1} arguments:")
 
-    for i in range(1, total_no_of_args):
-        print("{:d}: {}".format(i, sys.argv[i]))
+    sys.argv.pop(0)
+    k = 0
+    for i in sys.argv:
+        print(f"{k + 1}: {i}")
+        k += 1
