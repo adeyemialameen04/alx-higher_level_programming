@@ -14,14 +14,17 @@ if __name__ == "__main__":
     operator = sys.argv[2]
 
     if operator == "+":
-        print("{} + {} = {}".format(first_operand, second_operand, add(first_operand, second_operand)))
+        print("{} + {} = {}".format(first_operand, second_operand,
+                                    add(first_operand, second_operand)))
     elif operator == "-":
-        print("{} - {} = {}".format(first_operand, second_operand, sub(first_operand, second_operand)))
+        print("{} - {} = {}".format(first_operand, second_operand,
+                                    sub(first_operand, second_operand)))
     elif operator == "*":
-        print("{} * {} = {}".format(first_operand, second_operand, mul(first_operand, second_operand)))
+        print("{} * {} = {}".format(first_operand, second_operand,
+                                    mul(first_operand, second_operand)))
     elif operator == "/":
-        print("{} / {} = {}".format(first_operand, second_operand, div(first_operand, second_operand)))
+        print("{} / {} = {}".format(first_operand, second_operand,
+                                    div(first_operand, second_operand)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-
