@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
-output = "#pythoniscool\n"
-getattr(__import__("builtins"), "print")(output, end="")
+import builtins as __builtin__
+__builtin__.print("#pythoniscool")
