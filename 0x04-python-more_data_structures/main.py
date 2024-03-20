@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-common_elements = __import__('3-common_elements').common_elements
+print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
 
-set_1 = { "Python", "C", "Javascript" }
-set_2 = { "Bash", "C", "Ruby", "Perl" }
-c_set = common_elements(set_1, set_2)
-print(sorted(list(c_set)))
+a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low level", 'ids': [1, 2, 3] }
+print_sorted_dictionary(a_dictionary)
