@@ -68,3 +68,10 @@ void print_python_bytes(PyObject *p)
 	else
 		printf("  [ERROR] Invalid Bytes Object\n");
 }
+
+void print_python_float(PyObject *p)
+{
+	(void)p;
+}
+
+/* PyList_Size */
