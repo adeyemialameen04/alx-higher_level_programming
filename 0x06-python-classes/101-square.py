@@ -58,3 +58,70 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+    def __eq__(self, other):
+        """
+        Equal sign.
+        Args:
+            other (Square): The other square we are comapring with.
+
+        Returns:
+            True, if they are equal and False if otherwise.
+        """
+        return self.area() == other.area()
+
+    def __ne__(self, other):
+        """
+        Not Equal sign.
+        Args:
+            other (Square): The other square we are comapring with.
+
+        Returns:
+            True, if they are not equal and False if otherwise.
+        """
+        return self.area() != other.area()
+
+    def __gt__(self, other):
+        """
+        Greater sign.
+        Args:
+            other (Square): The other square we are comapring with.
+
+        Returns:
+            True, self is bigger than other and False if otherwise.
+        """
+        return self.area() > other.area()
+
+    def __ge__(self, other):
+        """
+        Greater/equal sign.
+        Args:
+            other (Square): The other square we are comapring with.
+
+        Returns:
+            True, self is bigger than or equal other and False if otherwise.
+        """
+        return self.area() >= other.area()
+
+    def __lt__(self, other):
+        """
+        Less sign.
+        Args:
+            other (Square): The other square we are comapring with.
+
+        Returns:
+            True, self is less than other and False if otherwise.
+        """
+
+        return self.area() < other.area()
+
+    def __le__(self, other):
+        """
+        Less/equal sign.
+        Args:
+            other (Square): The other square we are comapring with.
+
+        Returns:
+            True, self is less than or equal to other and False if otherwise.
+        """
+        return self.area() <= other.area()
