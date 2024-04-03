@@ -19,14 +19,8 @@ class Node:
             data(int): The data.
             next_node(Node): A node.
         """
-        if not isinstance(data, int):
-            raise TypeError("data must be an integer")
-        else:
-            self.__data = data
-        if next_node is not None and not isinstance(next_node, Node):
-            raise TypeError("next_node must be a Node object")
-        else:
-            self.__next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -46,8 +40,8 @@ class Node:
         """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        else:
-            self.__data = value
+
+        self.__data = value
 
     @property
     def next_node(self):
@@ -67,10 +61,9 @@ class Node:
         Returns:
             Mothing.
         """
-        if value is not None and not isinstance(value, Node):
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
-        else:
-            self.__next_node = value
+        self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -81,7 +74,7 @@ class SinglyLinkedList:
         """
         Initialization.
         """
-        self.head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         """
@@ -91,12 +84,12 @@ class SinglyLinkedList:
         Returns:
             Nothing.
         """
-        if self.head is None or self.head.data >= value:
-            node = Node(value, self.head)
-            self.head = node
+        if self.__head is None or self.__head.data >= value:
+            node = Node(value, self.__head)
+            self.__head = node
             return
 
-        curr = self.head
+        curr = self.__head
         while curr.next_node:
             if curr.next_node.data >= value:
                 break
@@ -112,12 +105,9 @@ class SinglyLinkedList:
         Returns:
             The concatenated data of the list.
         """
-        if self.head is None:
-            return ""
-
-        curr = self.head
-        result = ""
-        while curr:
-            result += str(curr.data) + "\n"
-            curr = curr.next_node
-        return result
+        values = []
+        tmp = self.__head
+        while tmp is not None:
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return '\n'.join(values)
