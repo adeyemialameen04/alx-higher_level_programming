@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Magic class module.
+"""
 import math
 
 
