@@ -85,7 +85,8 @@ class SinglyLinkedList:
             Nothing.
         """
         if self.__head is None or self.__head.data >= value:
-            node = Node(value, self.__head)
+            node = Node(value)
+            node.next_node = self.__head
             self.__head = node
             return
 
@@ -105,9 +106,12 @@ class SinglyLinkedList:
         Returns:
             The concatenated data of the list.
         """
-        values = []
-        tmp = self.__head
-        while tmp is not None:
-            values.append(str(tmp.data))
-            tmp = tmp.next_node
-        return '\n'.join(values)
+        if self.__head is None:
+            return ""
+
+        curr = self.__head
+        result = ""
+        while curr:
+            result += str(curr.data) + "\n"
+            curr = curr.next_node
+        return result
