@@ -11,11 +11,12 @@ class Square:
     Attributes:
         __size (int): The size of the square.
     """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initializes a square object.
         Args:
             size (int): The size of the square.
+            position (tuple): The coord of the square.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -23,6 +24,12 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+        if not isinstance(position, tuple) or len(position) != 2 or \
+                not all(isinstance(i, int) for i in position) or \
+                not all(i >= 0 for i in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
 
     def area(self):
         """
@@ -40,6 +47,29 @@ class Square:
             The size of the square.
         """
         return self.__size
+
+    @property
+    def position(self):
+        """
+        Gets position.
+        Returns:
+            Postion.
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """
+        Sets the position of a square.
+        Args:
+            value (tuple): The value w want to set the position to.
+        """
+        if not isinstance(value, tuple) or len(value) != 2 or \
+                not all(isinstance(i, int) for i in value) or \
+                not all(i >= 0 for i in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
 
     @size.setter
     def size(self, value):
@@ -59,69 +89,28 @@ class Square:
         else:
             self.__size = value
 
-    def __eq__(self, other):
+    def my_print(self):
         """
-        Equal sign.
-        Args:
-            other (Square): The other square we are comapring with.
-
+        Prints a square.
         Returns:
-            True, if they are equal and False if otherwise.
+            Nothing.
         """
-        return self.area() == other.area()
+        if self.__size == 0:
+            print()
+            return
 
-    def __ne__(self, other):
+        for i in range(self.__position[1]):
+            print()
+
+        for _ in range(self.__size):
+            print(" " * self.__position[0], end="")
+            print("#" * self.__size)
+
+    def __str__(self):
         """
-        Not Equal sign.
-        Args:
-            other (Square): The other square we are comapring with.
-
+        Print str.
         Returns:
-            True, if they are not equal and False if otherwise.
+            An empty str.
         """
-        return self.area() != other.area()
-
-    def __gt__(self, other):
-        """
-        Greater sign.
-        Args:
-            other (Square): The other square we are comapring with.
-
-        Returns:
-            True, self is bigger than other and False if otherwise.
-        """
-        return self.area() > other.area()
-
-    def __ge__(self, other):
-        """
-        Greater/equal sign.
-        Args:
-            other (Square): The other square we are comapring with.
-
-        Returns:
-            True, self is bigger than or equal other and False if otherwise.
-        """
-        return self.area() >= other.area()
-
-    def __lt__(self, other):
-        """
-        Less sign.
-        Args:
-            other (Square): The other square we are comapring with.
-
-        Returns:
-            True, self is less than other and False if otherwise.
-        """
-
-        return self.area() < other.area()
-
-    def __le__(self, other):
-        """
-        Less/equal sign.
-        Args:
-            other (Square): The other square we are comapring with.
-
-        Returns:
-            True, self is less than or equal to other and False if otherwise.
-        """
-        return self.area() <= other.area()
+        self.my_print()
+        return ""
