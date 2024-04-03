@@ -5,6 +5,13 @@ A module for sll.
 
 
 class Node:
+    """
+    Defines a Node.
+
+    Attributes:
+        __data (int): The data of the Node.
+        __next_node (Node): The next node in the list.
+    """
     def __init__(self, data, next_node=None):
         """
         Initialization of a node.
@@ -67,6 +74,9 @@ class Node:
 
 
 class SinglyLinkedList:
+    """
+    Defines a singly linked list.
+    """
     def __init__(self):
         """
         Initialization.
