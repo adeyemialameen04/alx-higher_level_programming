@@ -106,12 +106,9 @@ class SinglyLinkedList:
         Returns:
             The concatenated data of the list.
         """
-        if self.__head is None:
-            return ""
-
-        curr = self.__head
-        result = ""
-        while curr:
-            result += str(curr.data) + "\n"
-            curr = curr.next_node
-        return result
+        values = []
+        tmp = self.__head
+        while tmp is not None:
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return '\n'.join(values)
