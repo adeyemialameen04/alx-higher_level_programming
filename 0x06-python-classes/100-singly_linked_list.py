@@ -19,6 +19,8 @@ class Node:
             data(int): The data.
             next_node(Node): A node.
         """
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
         self.__data = data
         self.__next_node = next_node
 
@@ -106,9 +108,9 @@ class SinglyLinkedList:
         Returns:
             The concatenated data of the list.
         """
-        values = []
-        tmp = self.__head
-        while tmp is not None:
-            values.append(str(tmp.data))
-            tmp = tmp.next_node
-        return '\n'.join(values)
+        result = []
+        curr = self.__head
+        while curr is not None:
+            result.append(str(curr.data))
+            curr = curr.next_node
+        return '\n'.join(result)

@@ -1,10 +1,22 @@
 #!/usr/bin/python3
-Square = __import__('101-square').Square
+Node = __import__('100-singly_linked_list').Node
 
-my_square = Square(5, (0, 0))
-print(my_square)
+n1 = Node(3)
+print(n1.data)
 
-print("--")
+n2 = Node(-5)
+print(n2.data)
 
-my_square = Square(5, (4, 1))
-print(my_square)
+n3 = Node(4)
+n3.next_node = n2
+print(n3.next_node.data)
+
+try:
+    n4 = Node("4")
+except Exception as e:
+    print(e)
+
+try:
+    n2.next_node = "Node"
+except Exception as e:
+    print(e)
