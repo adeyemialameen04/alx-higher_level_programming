@@ -1,0 +1,103 @@
+The ``0-add_integer`` module
+============================
+
+Using  ``add_integer``
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Testing for normal values
+>>> add_integer(10, 30)
+40
+
+Testing for a +ve and -ve
+>>> add_integer(10, -9)
+1
+
+Testing for a -ve and b +ve
+>>> add_integer(-2, 10)
+8
+
+Testing for a -ve and b no arg
+>>> add_integer(-10)
+88
+
+Testing for 1 arg
+>>> add_integer(20)
+118
+
+Testing for a str and b num
+>>> add_integer("I am a", 90)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Testing for a num and b str
+>>> add_integer(90, "I am b")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+Testing for a None
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Testing for b None
+>>> add_integer(10, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+Testing for an array and +ve value
+>>> add_integer([20, 10], 20)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Testing for a +ve and b array
+>>> add_integer(20, [20, 10])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+Testing for a inf and b +ve
+>>> add_integer(float('inf'), 20)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+
+Testing for a inf and b str
+>>> add_integer(float('inf'), "Hello im b")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+
+Testing for a +ve and b inf
+>>> add_integer(20, float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+
+Testing for a str and b inf
+>>> add_integer("Hello im b", float('inf'))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Testing for a nan and b num
+>>> add_integer(float('nan'), 20)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+Testing for a float b num
+>>> add_integer(15.8, 20)
+35
+
+Testing for a float and b float
+>>> add_integer(15.8, 15.8)
+30
