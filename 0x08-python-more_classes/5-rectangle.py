@@ -29,7 +29,7 @@ class Rectangle:
         self.__height = height
 
     def __del__(self):
-        print("Bye rectanglw ...")
+        print("Bye rectangle...")
 
     @property
     def width(self):
