@@ -85,6 +85,11 @@ class Rectangle:
         return (self.__height + self.__width) * 2
 
     def __str__(self):
+        """
+        Prints # based on the height and width of the rectangle.
+        Returns:
+            Multiple #
+        """
         if self.__height == 0 or self.__height == 0:
             return ""
 
@@ -94,4 +99,9 @@ class Rectangle:
         return rec_str.rstrip()
 
     def __repr__(self):
+        """
+        Prints strig represntation of rectangle.
+        Returns:
+            The string representation.
+        """
         return f"Rectangle({self.__width}, {self.__height})"
