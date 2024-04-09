@@ -1,2 +1,4 @@
 .idea
  __pycache__/
+ /0x07-python-test_driven_development/__pycache__
+ /0x07-python-test_driven_development/tests/__pycache__
