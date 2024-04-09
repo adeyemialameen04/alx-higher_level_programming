@@ -1,3 +1,11 @@
-Strings, ints are immutable i.e
+======== IMMUTABLES ========== (Can't change)
+Strings
+Ints
+Tuples
+Frozen Sets
 
-Lists are mutable
+========= MUTABLE ========== (Can change)
+Lists
+Dictionaries
+Sets
+User defined classes
