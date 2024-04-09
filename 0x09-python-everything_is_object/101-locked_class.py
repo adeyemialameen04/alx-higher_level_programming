@@ -13,4 +13,3 @@ class LockedClass:
         Empty init function lol
         """
         pass
-
