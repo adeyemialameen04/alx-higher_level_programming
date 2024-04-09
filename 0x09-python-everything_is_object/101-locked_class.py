@@ -6,16 +6,11 @@ class LockedClass:
     """
     Locked class.
     """
-    def __setattr__(self, name, value):
+    __slots__ = ['first_name']
+
+    def __init__(self):
         """
-        Sets the attribute.
-        Args:
-            name: name of the attr.
-            value: the value of the attr.
-        Returns:
-            Nothing
+        Empty init function lol
         """
-        if name != 'first_name':
-            raise AttributeError(f"'LockedClass' object has no"
-                                 f" attribute '{name}'")
-        super().__setattr__(name, value)
+        pass
+
