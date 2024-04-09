@@ -1,0 +1,3 @@
+Strings, ints are immutable i.e
+
+Lists are mutable
