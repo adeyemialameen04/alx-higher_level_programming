@@ -99,3 +99,16 @@ Testing for odd m_b:
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: each row of m_b must be of the same size
+
+Testing for ma list of ints and mb list of list of ints
+    >>> matrix_mul([1, 2, 3], [[1, 3, 4], [2, 7, 9]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list of lists
+
+
+Testing for mb list of ints and ma list of list of ints
+    >>> matrix_mul([[1, 3, 4], [2, 7, 9]], [1, 2, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list of lists
