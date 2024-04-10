@@ -26,7 +26,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_at_beginning(self):
         """Testing at beginning"""
         test_arr = [30, 10, 1]
-        self.assertEqual((max_integer(test_arr), 30))
+        self.assertEqual((max_integer(test_arr)), 30)
 
     def test_all_negative(self):
         """Testing for all negative"""
@@ -43,7 +43,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([0]), 0)
 
     def test_0_negative(self):
-        "Testing for -ve and multiple -ve 0's in array"
+        """Testing for -ve and multiple -ve 0's in array"""
         self.assertEqual(max_integer([-0]), 0)
         self.assertEqual(max_integer([-0, -0]), 0)
 
@@ -51,7 +51,7 @@ class TestMaxInteger(unittest.TestCase):
         """Testing for no args in array"""
         self.assertIsNone(max_integer())
 
-    def test_list_of_list(self):
+    def list_of_list(self):
         """Testing for lists of lists in array."""
         with self.assertRaises(TypeError):
             max_integer([10, 20, [-1, 2]])
