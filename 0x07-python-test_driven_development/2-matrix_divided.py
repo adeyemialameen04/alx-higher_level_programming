@@ -40,6 +40,9 @@ def matrix_divided(matrix, div):
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
 
+    if isinstance(div, float) and div == float('inf'):
+        raise OverflowError("cannot convert float infinity to integer")
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
 

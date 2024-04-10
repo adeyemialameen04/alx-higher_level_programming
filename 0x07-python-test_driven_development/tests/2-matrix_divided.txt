@@ -86,3 +86,8 @@ Testing with 1 argument passed str
     ...
     TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
+Testing width normal list and inf div
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
