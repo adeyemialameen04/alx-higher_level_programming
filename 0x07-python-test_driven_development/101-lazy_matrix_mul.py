@@ -2,9 +2,10 @@
 """
 Matrix multiply
 """
+import numpy as np
 
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     """
     Multiply two matrices
     Args:
@@ -53,14 +54,12 @@ def matrix_mul(m_a, m_b):
     if not all(len(row) == len(m_b[0]) for row in m_b):
         raise TypeError("each row of m_b must be of the same size")
 
-    if len(m_a[0]) != len(m_b):
-        raise ValueError("m_a and m_b can't be multiplied")
+    a = np.array(m_a)
+    b = np.array(m_b)
 
-    result = []
-    for i in range(len(m_a)):
-        row = []
-        for j in range(len(m_b[0])):
-            element = sum(m_a[i][k] * m_b[k][j] for k in range(len(m_b)))
-            row.append(element)
-        result.append(row)
+    try:
+        result = np.dot(a, b)
+    except ValueError as e:
+        raise ValueError("m_a and m_b can't be multiplied") from e
+
     return result

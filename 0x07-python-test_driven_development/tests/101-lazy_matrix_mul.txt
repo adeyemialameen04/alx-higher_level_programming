@@ -1,101 +1,103 @@
-The ``100-matrix_mul`` module
+The ``101-lazy_lazy_matrix_mul`` module
 ============================
 
-Using  ``matrix_mul``
+Using  ``lazy_matrix_mul``
 
 Importing the module
-    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
 Testing normal
-    >>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-    [[7, 10], [15, 22]]
-    >>> print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
-    [[13, 16]]
+    >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+    [[ 7 10]
+     [15 22]]
+    >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+    [[13 16]]
 
 Testing for no args:
-	 >>> matrix_mul()
+	 >>> lazy_matrix_mul()
 	 Traceback (most recent call last):
 	 ...
-	 TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+	 TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 
 Testing for one arg:
-	 >>> matrix_mul([[1, 2], [3, 4]])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
-	 TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+	 TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 
 Testing for too many args:
-	 >>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]])
 	 Traceback (most recent call last):
 	 ...
-	 TypeError: matrix_mul() takes 2 positional arguments but 3 were given
+	 TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
 
 Testing for normal use with ints and floats:
-	 >>> matrix_mul([[1, 2], [3, 4]], [[1.5, 2.5, 3.5], [4.5, 6.5, 7.5]])
-	 [[10.5, 15.5, 18.5], [22.5, 33.5, 40.5]]
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1.5, 2.5, 3.5], [4.5, 6.5, 7.5]])
+	 array([[10.5, 15.5, 18.5],
+	        [22.5, 33.5, 40.5]])
 
 Testing for None in m_a:
-	 >>> matrix_mul(None, [[1, 2], [3, 4]])
+	 >>> lazy_matrix_mul(None, [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: m_a must be a list
 
 Testing for None m_b:
-	 >>> matrix_mul([[1, 2], [3, 4]], None)
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], None)
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: m_b must be a list
 
 Testing for empty m_a:
-	 >>> matrix_mul([], [[1, 2], [3, 4]])
+	 >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: m_a can't be empty
 
 Testing for m_b with empty rows:
-	 >>> matrix_mul([[1, 2], [3, 4]], [[]])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[]])
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: m_b can't be empty
 
 Testing for non-number in m_a:
-	 >>> matrix_mul([[1, "Hello"], [3, 4]], [[1, 2], [3, 4]])
+	 >>> lazy_matrix_mul([[1, "Hello"], [3, 4]], [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: m_a should contain only integers or floats
 
 Testing for m_a with empty rows:
-	 >>> matrix_mul([[], []], [[1, 2], [3, 4]])
+	 >>> lazy_matrix_mul([[], []], [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: m_a can't be empty
 
 Testing for non-number in m_b:
-	 >>> matrix_mul([[1, 2], [3, 4]], [[1, "Hello"], [3, 4]])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, "Hello"], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: m_b should contain only integers or floats
 
 Testing for mismatching matrices:
-	 >>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4,]])
+	 >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4,]])
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: m_a and m_b can't be multiplied
 
 Testing for passing empty m_b:
-	 >>> matrix_mul([[1, 2], [3, 4]], [])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: m_b can't be empty
 
 Testing for odd m_a:
-	 >>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: each row of m_a must be of the same size
 
 Testing for odd m_b:
-	 >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: each row of m_b must be of the same size
