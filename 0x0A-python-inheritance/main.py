@@ -24,4 +24,4 @@ bg.integer_validator("width", 89)
 
 # bg.integer_validator("age", 0)
 
-bg.integer_validator("name")
+bg.integer_validator("float", float('-inf'))

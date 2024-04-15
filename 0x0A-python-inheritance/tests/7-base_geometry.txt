@@ -15,3 +15,11 @@ Traceback (most recent call last):
 ...
 ValueError: distance must be greater than 0
 >>> bg.integer_validator(20, 2)
+>>> bg.integer_validator("distance", float('inf'))
+Traceback (most recent call last):
+...
+TypeError: distance must be an integer
+>>> bg.integer_validator("distance", float('-inf'))
+Traceback (most recent call last):
+...
+TypeError: distance must be an integer
