@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""Documenting module"""
+
+
+class BaseGeometry:
+    """
+    Documenting class.
+    """
+    def __init__(self):
+        pass
+
+    def area(self):
+        """
+        Raise an exception.
+        Returns:
+            Nothing.
+        """
+        raise Exception("area() is not implemented")
+
+    @staticmethod
+    def integer_validator(name, value):
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
