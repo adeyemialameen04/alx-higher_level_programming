@@ -10,4 +10,5 @@ bg.integer_validator("width", True)
 # >>> bg.integer_validator(20)
 # Traceback (most recent call last):
 # ...
-# TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+# TypeError: BaseGeometry.integer_validator() missing 1 required
+# positional argument: 'value'
