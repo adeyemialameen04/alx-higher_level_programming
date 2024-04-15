@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Documenting module"""
 
 
 def inherits_from(obj, a_class):
