@@ -6,9 +6,6 @@ class BaseGeometry:
     """
     Documenting class.
     """
-    def __init__(self):
-        pass
-
     def area(self):
         """
         Raise an exception.
