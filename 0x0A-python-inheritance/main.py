@@ -24,4 +24,4 @@ bg.integer_validator("width", 89)
 
 # bg.integer_validator("age", 0)
 
-bg.integer_validator(20, 2)
+bg.integer_validator("name")
