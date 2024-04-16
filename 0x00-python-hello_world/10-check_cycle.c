@@ -7,22 +7,22 @@
  */
 int check_cycle(listint_t *list)
 {
-listint_t *tortoise, *hare;
+	listint_t *tortoise, *hare;
 
-if (list == NULL || list->next == NULL)
-return (0);
+	if (list == NULL || list->next == NULL)
+		return (0);
 
-tortoise = list;
-hare = list->next;
+	tortoise = list;
+	hare = list->next;
 
-while (tortoise != hare)
-{
-if (hare == NULL || hare->next == NULL)
-return (0);
+	while (tortoise != hare)
+	{
+		if (hare == NULL || hare->next == NULL)
+			return (0);
 
-tortoise = tortoise->next;
-hare = hare->next->next;
-}
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+	}
 
-return (1);
+	return (1);
 }
