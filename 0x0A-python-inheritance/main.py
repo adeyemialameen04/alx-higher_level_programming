@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+MyList = __import__('1-my_list').MyList
 
-bg = BaseGeometry()
+my_list = MyList()
+empty = MyList()
+my_list.append(1)
+my_list.append(4)
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+print(my_list)
+my_list.print_sorted()
+print(my_list)
 
-bg.integer_validator("my_int", 12)
-bg.integer_validator("width", 20, 10)
-# bg.integer_validator(20)
-
-# >>> bg.integer_validator(20)
-# Traceback (most recent call last):
-# ...
-# TypeError: BaseGeometry.integer_validator() missing 1 required
-# positional argument: 'value'
+empty.print_sorted()

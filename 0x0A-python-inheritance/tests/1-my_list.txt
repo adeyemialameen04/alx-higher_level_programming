@@ -20,3 +20,8 @@
 Traceback (most recent call last):
 ...
 TypeError: '<' not supported between instances of 'str' and 'int'
+
+
+>>> empty = MyList()
+>>> empty.print_sorted()
+[]
