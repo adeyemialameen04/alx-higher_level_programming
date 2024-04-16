@@ -13,7 +13,7 @@ def print_stats(size, stats_codes):
         Nothing.
     """
     print("File size: {}".format(size))
-    for code, count in stats_codes:
+    for code, count in sorted(stats_codes.items()):
         if count > 0:
             print("{}: {}".format(code, count))
 
