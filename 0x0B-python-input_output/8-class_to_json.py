@@ -11,6 +11,6 @@ def class_to_json(obj):
     Returns:
         Nothing
     """
-    json_str = json.dumps(obj.__dict__)
-    obj_str = json.loads(json_str)
-    return obj_str
+    # json_str = json.dumps(obj.__dict__)
+    # obj_str = json.loads(json_str)
+    return obj.__dict__
