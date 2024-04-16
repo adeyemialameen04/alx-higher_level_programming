@@ -5,41 +5,41 @@ Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
->>> bg.integer_validator("", 10)  # Test with empty string as name
+>>> bg.integer_validator("", 10)
 
->>> bg.integer_validator(123, 10)  # Test with non-string as name
+>>> bg.integer_validator(123, 10)
 
->>> bg.integer_validator("value", None)  # Test with None as value
+>>> bg.integer_validator("value", None)
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", True)  # Test with boolean as value
+>>> bg.integer_validator("value", True)
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", [1, 2, 3])  # Test with list as value
+>>> bg.integer_validator("value", [1, 2, 3])
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", (1, 2, 3))  # Test with tuple as value
+>>> bg.integer_validator("value", (1, 2, 3))
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", {1, 2, 3})  # Test with set as value
+>>> bg.integer_validator("value", {1, 2, 3})
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", {"a": 1, "b": 2})  # Test with dict as value
+>>> bg.integer_validator("value", {"a": 1, "b": 2})
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", 1.5)  # Test with float as value
+>>> bg.integer_validator("value", 1.5)
 Traceback (most recent call last):
 ...
 TypeError: value must be an integer
@@ -73,3 +73,15 @@ TypeError: area() takes 1 positional argument but 2 were given
 Traceback (most recent call last):
 ...
 TypeError: area() takes 1 positional argument but 3 were given
+
+>>> bg.integer_validator("age", -4)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("age", 4)
