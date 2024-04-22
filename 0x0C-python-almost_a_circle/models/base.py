@@ -42,7 +42,6 @@ class Base:
         Saves a
         Args:
             list_objs:
-
         Returns:
         """
         if list_objs is None:
