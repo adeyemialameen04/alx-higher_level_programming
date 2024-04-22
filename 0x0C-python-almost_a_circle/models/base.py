@@ -113,7 +113,8 @@ class Base:
         filename = cls.__name__ + ".csv"
         with open(filename, mode="w", newline='') as file:
             writer = csv.writer(file)
-            for obj in list_objs:
+            list_copy = list_objs.copy()
+            for obj in list_copy:
                 if cls.__name__ == "Rectangle":
                     writer.writerow([obj.id, obj.width, obj.height,
                                      obj.x, obj.y])
