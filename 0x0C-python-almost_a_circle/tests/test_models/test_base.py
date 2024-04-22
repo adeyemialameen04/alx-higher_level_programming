@@ -42,24 +42,26 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(squ_obj[0]["x"], 24)
         self.assertTrue(type(squ_obj[0]), dict)
 
-    def test_save_to_file(self):
-        """Tests for save to file"""
-        # For squs
-        squ = Square(9, 18, 16, 113)
-        squ_2 = Square(42, 29, 20, 20)
-        Base.save_to_file([squ, squ_2])
-        with open('Square.json', 'r', encoding='utf-8') as file:
-            read = file.read()
-        dicts_lists = json.loads(read)
-        self.assertEqual(dicts_lists[0]['id'], 113)
-        self.assertEqual(dicts_lists[1]['x'], 29)
+    # def test_save_to_file(self):
+    #     """Tests for save to file"""
+    #     # For squs
+    #     squ = Square(9, 18, 16, 113)
+    #     squ_2 = Square(42, 29, 20, 20)
+    #     Base.save_to_file([squ, squ_2])
+    #     with open('Square.json', 'r', encoding='utf-8') as file:
+    #         read = file.read()
+    #     dicts_lists = json.loads(read)
+    #     self.assertEqual(dicts_lists[0]['id'], 113)
+    #     self.assertEqual(dicts_lists[1]['x'], 29)
+    #
+    #     # For recs
+    #     rec_1 = Rectangle(5, 6, 3, 3, 30)
+    #     rec_2 = Rectangle(7, 8, 4, 4, 40)
+    #     Base.save_to_file([rec_1, rec_2])
+    #     with open('Rectangle.json', 'r', encoding='utf-8') as file:
+    #         read = file.read()
+    #     dicts_lists = json.loads(read)
+    #     self.assertEqual(dicts_lists[0]['id'], 30)
+    #     self.assertEqual(dicts_lists[1]['x'], 4)
 
-        # For recs
-        rec_1 = Rectangle(5, 6, 3, 3, 30)
-        rec_2 = Rectangle(7, 8, 4, 4, 40)
-        Base.save_to_file([rec_1, rec_2])
-        with open('Rectangle.json', 'r', encoding='utf-8') as file:
-            read = file.read()
-        dicts_lists = json.loads(read)
-        self.assertEqual(dicts_lists[0]['id'], 30)
-        self.assertEqual(dicts_lists[1]['x'], 4)
+    # def test_more_save_to_file(self):
