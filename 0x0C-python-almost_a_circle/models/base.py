@@ -62,6 +62,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        Creates a new class with all instances set.
+        Args:
+            **dictionary: like a double pointer to dict.
+        Returns:
+            an instance with all attributes already set
+        """
+        dummy = ""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -69,3 +77,16 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        try:
+            file_name = cls.__name__ + ".json"
+            with open(file_name, "r") as file:
+                data = file.read()
+                if not data:
+                    return []
+                dicts = cls.from_json_string(data)
+                return [cls.create(**dic) for dic in dicts]
+        except FileNotFoundError:
+            return []
