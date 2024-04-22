@@ -24,11 +24,21 @@ class TestBaseClass(unittest.TestCase):
 
     def test_to_json(self):
         """Tests if to_json is working """
-        r1 = Rectangle(8, 120, 131, 9078, 112)
-        r2 = Rectangle(9, 18, 36, 72, 14)
-        d1 = r1.to_dictionary()
-        d2 = r2.to_dictionary()
-        json_string = Base.to_json_string([d1, d2])
+        rec1 = Rectangle(8, 120, 131, 9078, 112)
+        rec2 = Rectangle(9, 18, 36, 72, 14)
+        dict_1 = rec1.to_dictionary()
+        dict_2 = rec2.to_dictionary()
+        json_string = Base.to_json_string([dict_1, dict_2])
         parsed_json = json.loads(json_string)
         self.assertEqual(parsed_json[0]['id'], 112)
         self.assertEqual(parsed_json[1]['x'], 36)
+
+    def test_from_json(self):
+        """"""
+        squ = Square(12, 24, 48, 10)
+        squ_dict = squ.to_dictionary()
+        squ_json = Base.to_json_string([squ_dict])
+        squ_obj = Base.from_json_string(squ_json)
+        self.assertEqual(squ_obj[0]["x"], 24)
+        self.assertTrue(type(squ_obj[0]), dict)
+
