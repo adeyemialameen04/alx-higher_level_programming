@@ -45,63 +45,63 @@ class Square(Rectangle):
                                                        self.width)
         return square_str
 
-    @property
-    def size(self):
-        """
-        Size getter
-        Returns:
-            The width of the square
-        """
-        return self.width
+    # @property
+    # def size(self):
+    #     """
+    #     Size getter
+    #     Returns:
+    #         The width of the square
+    #     """
+    #     return self.width
+    #
+    # @size.setter
+    # def size(self, value):
+    #     """
+    #     Size setter
+    #     Args:
+    #         value: The height and width
+    #     Returns:
+    #         Nothing.
+    #     """
+    #     integer_validation("width", value)
+    #     self.height = value
+    #     self.width = value
 
-    @size.setter
-    def size(self, value):
-        """
-        Size setter
-        Args:
-            value: The height and width
-        Returns:
-            Nothing.
-        """
-        integer_validation("width", value)
-        self.height = value
-        self.width = value
-
-    def update(self, *args, **kwargs):
-        """
-        Updates the instance of class.
-        Args:
-            *args: Non keyword args
-            **kwargs: Keyworded args.
-        Returns:
-            Nothing.
-        """
-        if args:
-            argc = len(args)
-            if argc > 0:
-                self.id = args[0]
-            if argc > 1:
-                integer_validation("width", args[1])
-                self.width = args[1]
-            if argc > 2:
-                integer_validation("x", args[2])
-                self.x = args[2]
-            if argc > 3:
-                integer_validation("y", args[3])
-                self.y = args[3]
-        else:
-            for key, value in kwargs.items():
-                if hasattr(self, key):
-                    setattr(self, key, value)
-
-    def to_dictionary(self):
-        """
-        Returns a dict of the class.
-        Returns:
-            A dict.
-        """
-        new_dict = super().to_dictionary()
-        del new_dict['width']
-        del new_dict['height']
-        new_dict['size'] = self.size
-        return new_dict
+    # def update(self, *args, **kwargs):
+    #     """
+    #     Updates the instance of class.
+    #     Args:
+    #         *args: Non keyword args
+    #         **kwargs: Keyworded args.
+    #     Returns:
+    #         Nothing.
+    #     """
+    #     if args:
+    #         argc = len(args)
+    #         if argc > 0:
+    #             self.id = args[0]
+    #         if argc > 1:
+    #             integer_validation("width", args[1])
+    #             self.width = args[1]
+    #         if argc > 2:
+    #             integer_validation("x", args[2])
+    #             self.x = args[2]
+    #         if argc > 3:
+    #             integer_validation("y", args[3])
+    #             self.y = args[3]
+    #     else:
+    #         for key, value in kwargs.items():
+    #             if hasattr(self, key):
+    #                 setattr(self, key, value)
+    #
+    # def to_dictionary(self):
+    #     """
+    #     Returns a dict of the class.
+    #     Returns:
+    #         A dict.
+    #     """
+    #     new_dict = super().to_dictionary()
+    #     del new_dict['width']
+    #     del new_dict['height']
+    #     new_dict['size'] = self.size
+    #     return new_dict
