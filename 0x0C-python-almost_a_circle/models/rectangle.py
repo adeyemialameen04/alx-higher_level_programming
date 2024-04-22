@@ -142,15 +142,15 @@ class Rectangle(Base):
         Returns:
             Nothing.
         """
-        for y_sp in range(0, self.y):
+        for y_axis in range(0, self.__y):
             print()
-        for i in range(0, self.height):
-            builder = ""
-            for x_sp in range(0, self.x):
-                builder += " "
-            for j in range(0, self.width):
-                builder += "#"
-            print(builder)
+        for i in range(0, self.__height):
+            row_str = ""
+            for x_sp in range(0, self.__x):
+                row_str += " "
+            for j in range(0, self.__width):
+                row_str += "#"
+            print(row_str)
 
     def __str__(self):
         """
