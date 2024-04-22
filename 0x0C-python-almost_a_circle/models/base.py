@@ -63,7 +63,7 @@ class Base:
             A list rep of json_str
         """
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return []
 
         data = json.loads(json_string)
         return data
