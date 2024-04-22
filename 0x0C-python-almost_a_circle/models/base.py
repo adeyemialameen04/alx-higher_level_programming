@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Documenting module"""
+import csv
 import json
 
 
@@ -88,6 +89,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """"""
         try:
             file_name = cls.__name__ + ".json"
             with open(file_name, "r") as file:
@@ -98,3 +100,42 @@ class Base:
                 return [cls.create(**dic) for dic in dicts]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Saves obj to csv file.
+        Args:
+            list_objs: The list objs.
+        Returns:
+            Nothing.
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow([obj.id, obj.width, obj.height,
+                                     obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes objects from a CSV file.
+        Returns:
+            List of deserialized objects.
+        """
+        filename = cls.__name__ + ".csv"
+        objects = []
+        with open(filename, mode='r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if cls.__name__ == "Rectangle":
+                    id, width, height, x, y = map(int, row)
+                    objects.append(cls(width, height, x, y, id))
+                elif cls.__name__ == "Square":
+                    id, size, x, y = map(int, row)
+                    objects.append(cls(size, x, y, id))
+        return objects
