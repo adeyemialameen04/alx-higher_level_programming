@@ -43,14 +43,14 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(type(squ_obj[0]), dict)
 
     def test_create(self):
+        """Tests the create method"""
         # For recs
-        rec_1 = Rectangle(3, 5, 1)
-        rec_1_dict = rec_1.to_dictionary()
-        rec_2 = Rectangle.create(**rec_1_dict)
+        rec_1 = Rectangle(20, 13, 10, 34, 89)
+        rec_2 = Rectangle.create(**{'id': 89})
         self.assertEqual(rec_1.id, rec_2.id)
 
         # For squs
-        squ_1 = Square(3, 5, 1)
+        squ_1 = Square(3, 5, 9, 89)
         squ_1_dict = squ_1.to_dictionary()
-        rec_2 = Square.create(**squ_1_dict)
+        rec_2 = Square.create(**{'id': 89})
         self.assertEqual(squ_1.id, rec_2.id)
