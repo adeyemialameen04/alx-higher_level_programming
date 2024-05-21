@@ -1,0 +1,2 @@
+-- SHow tables.
+SHOW TABLES;
