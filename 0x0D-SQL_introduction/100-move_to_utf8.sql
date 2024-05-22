@@ -1,4 +1,5 @@
--- To utf8.
-ALTER DATABASE hbtn_0c_0 CHARACTER SET = utfmb4 COLLATE utfmb4_unicode_ci;
-ALTER TABLE hbtn_0c_0.first_table CONVERT TO CHARACTER SET utfmb4_unicode_ci;
+-- 100-move_to_utf8.sql
+ALTER DATABASE hbtn_0c_0 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+USE hbtn_0c_0;
+ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ALTER TABLE first_table MODIFY name VARCHAR(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
