@@ -1,7 +1,7 @@
 -- Cities by state.
 SELECT
-	cities.id
-	cities.name
+	cities.id,
+	cities.name,
 	states.name
 FROM
 	cities
