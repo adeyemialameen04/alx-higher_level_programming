@@ -1,4 +1,4 @@
 -- Subqueries.
 SELECT id, name
-FROM states
+FROM cities
 WHERE state_id = (SELECT id FROM states WHERE name = "California");
