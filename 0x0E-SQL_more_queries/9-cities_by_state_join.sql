@@ -6,4 +6,4 @@ SELECT
 FROM
 	cities
 	INNER JOIN states
-	ON cities.states_id = states.id;
+	ON cities.state_id = states.id;
