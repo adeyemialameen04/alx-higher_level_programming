@@ -2,7 +2,6 @@
 
 const sentences = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-let i;
-for (i = 0; i < sentences.length; i++) {
-  console.log(sentences[i]);
+for (const language of sentences) {
+  console.log(language);
 }
