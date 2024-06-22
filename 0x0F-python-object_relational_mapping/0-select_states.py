@@ -5,15 +5,15 @@ from sys import argv
 
 if __name__ == "__main__":
     username = argv[1]
-    passwd = argv[2]
+    password = argv[2]
     db = argv[3]
 
     conn = MySQLdb.connect(
-        username,
-        passwd,
-        db
+        user=username,
+        passwd=password,
+        db=db
     )
-    c = conn.cursor
+    c = conn.cursor()
     c.execute("SELECT * FROM states ORDER BY id ASC")
     rows = c.fetchall()
     for row in rows:
