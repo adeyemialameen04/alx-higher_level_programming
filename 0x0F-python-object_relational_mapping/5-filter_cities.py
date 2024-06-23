@@ -13,7 +13,7 @@ if __name__ == "__main__":
     FROM cities
     JOIN states ON cities.state_id = states.id
     WHERE states.name = %s
-    ORDER BY citiesss.id ASC
+    ORDER BY cities.id ASC
     """
 
     c.execute(query, (state_name,))
