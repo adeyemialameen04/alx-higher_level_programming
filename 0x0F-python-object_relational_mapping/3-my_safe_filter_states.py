@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" safely List all states that start with 'N' """
+"""3"""
 
 from sys import argv
 import MySQLdb
@@ -7,10 +7,10 @@ import MySQLdb
 if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
-    conn = argv[3]
+    db = argv[3]
     state_name = argv[4]
 
-    conn = MySQLdb.connect(user=username, passwd=password, db=conn)
+    conn = MySQLdb.connect(user=username, passwd=password, db=db)
     c = conn.cursor()
     query = """
         SELECT *
