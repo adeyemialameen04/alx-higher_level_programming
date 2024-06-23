@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     query = """
     SELECT cities.id, cities.name, states.name
-    FROM CITIES
+    FROM cities
     JOIN states ON cities.state_id = states.id
     ORDER BY cities.id ASC
     """
