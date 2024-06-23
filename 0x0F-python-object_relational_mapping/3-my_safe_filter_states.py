@@ -13,7 +13,10 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(user=username, passwd=password, db=conn)
     c = conn.cursor()
     query = """
-        SELECT * FROM states WHERE name = %s ORDER BY id ASC
+        SELECT *
+        FROM states
+        WHERE name = %s
+        ORDER BY id ASC
         """
     c.execute(query, (state_name, ))
 
