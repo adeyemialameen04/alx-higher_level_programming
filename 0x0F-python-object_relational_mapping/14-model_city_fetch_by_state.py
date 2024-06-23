@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
-    this is a good module
-"""
+"""14"""
 from sys import argv
 from model_state import Base, State
 from model_city import City

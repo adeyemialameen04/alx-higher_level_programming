@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
-"""
+"""13"""
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import Session
