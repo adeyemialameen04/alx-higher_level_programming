@@ -1,31 +1,24 @@
 #!/usr/bin/python3
-"""3"""
+""" safely List all states that start with 'N' """
+
 from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
-    username = argv[1]
-    password = argv[2]
-    db = argv[3]
-    state_name = argv[4]
+    sql_user = argv[1]
+    sql_pass = argv[2]
+    sql_db = argv[3]
+    search_state = argv[4]
 
-    conn = MySQLdb.connect(
-        host='localhost',
-        user=username,
-        passwd=password,
-        db=db,
-        port=3306
-    )
-    c = conn.cursor()
-    query = """
-        SELECT *
-        FROM states
-        WHERE name = %s
-        ORDER BY id ASC
-    """
-    c.execute(query, (state_name))
-    rows = c.fetchall()
+    db = MySQLdb.connect(user=sql_user, passwd=sql_pass, db=sql_db)
+    cursor = db.cursor()
+    statement = """
+        SELECT * FROM states WHERE name = %s ORDER BY id ASC
+        """
+    cursor.execute(statement, (search_state, ))
+
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
-    c.close()
-    conn.close()
+    cursor.close()
+    db.close()
